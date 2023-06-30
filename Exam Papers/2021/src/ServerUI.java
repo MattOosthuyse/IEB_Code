@@ -36,6 +36,8 @@ public class ServerUI extends javax.swing.JFrame {
         txtArea = new javax.swing.JTextArea();
         btnShowServers = new javax.swing.JButton();
         btnFaultAndRole = new javax.swing.JButton();
+        btnAssignTechs = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +62,20 @@ public class ServerUI extends javax.swing.JFrame {
             }
         });
 
+        btnAssignTechs.setText("Assign Techs");
+        btnAssignTechs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAssignTechsActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Tech Server Count");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -73,7 +89,10 @@ public class ServerUI extends javax.swing.JFrame {
                         .addComponent(btnShowServers)
                         .addGap(18, 18, 18)
                         .addComponent(btnFaultAndRole)
-                        .addGap(0, 138, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAssignTechs)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -83,7 +102,9 @@ public class ServerUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnShowServers)
-                    .addComponent(btnFaultAndRole))
+                    .addComponent(btnFaultAndRole)
+                    .addComponent(btnAssignTechs)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -101,6 +122,15 @@ public class ServerUI extends javax.swing.JFrame {
         String role = JOptionPane.showInputDialog("What role are you looking for?");
         txtArea.setText(sm.countServers(fault, role));
     }//GEN-LAST:event_btnFaultAndRoleActionPerformed
+
+    private void btnAssignTechsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignTechsActionPerformed
+        sm.assignTechnicians();
+        txtArea.setText(sm.allServers());
+    }//GEN-LAST:event_btnAssignTechsActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        txtArea.setText(sm.getTechServerCount());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,8 +168,10 @@ public class ServerUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAssignTechs;
     private javax.swing.JButton btnFaultAndRole;
     private javax.swing.JButton btnShowServers;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtArea;

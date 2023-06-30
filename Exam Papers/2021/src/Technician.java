@@ -10,13 +10,15 @@
 public class Technician {
 
     private String techID, name, roleSpeciality;
-    private int experience;
+    private int experience, serverCount;
+    
 
     public Technician(String inTID, String inN, int inE, String inR) {
         this.techID = inTID;
         this.name = inN;
         this.experience = inE;
         this.roleSpeciality = inR;
+        this.serverCount = 0;
     }
 
     public String getTechID() {
@@ -34,7 +36,15 @@ public class Technician {
     public String getRoleSpeciality() {
         return roleSpeciality;
     }
-
+    
+    public int getServerCount() {
+        return serverCount;
+    }
+    
+    public void incServerCount() {
+        serverCount++;
+    }
+    
     @Override
     public String toString() {
         return name + ", " + techID + ", " + experience + " year(s), " + roleSpeciality;
