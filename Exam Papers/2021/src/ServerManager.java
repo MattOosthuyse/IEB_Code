@@ -20,12 +20,15 @@ public class ServerManager {
 
     public ServerManager() {
         try {
-            Scanner scFile = new Scanner(new File("server.txt")).useDelimiter("#");
-            String sID = scFile.next();
-            String sLocation = scFile.next();
-            String sFault = scFile.next();
-            String sRole = scFile.next();
-            sArr[size++] = new Server(sID, sLocation, sFault, sRole);
+            Scanner scFile = new Scanner(new File("servers.txt"));
+            while (scFile.hasNextLine()) {
+                Scanner scLine = new Scanner(scFile.nextLine()).useDelimiter("#");
+                String sID = scLine.next();
+                String sLocation = scLine.next();
+                String sFault = scLine.next();
+                String sRole = scLine.next();
+                sArr[size++] = new Server(sID, sLocation, sRole, sFault);
+            }
         } catch (FileNotFoundException ex) {
             System.out.println("File could not be found.");
         }
@@ -39,13 +42,13 @@ public class ServerManager {
         return temp;
     }
 
-    public int countServers(String fault, String role) {
+    public String countServers(String fault, String role) {
         int count = 0;
         for (int i = 0; i < size; i++) {
             if (sArr[i].getFault().equals(fault) && sArr[i].getRole().equals(role)) {
                 count++;
             }
         }
-        return count;
+        return "Number of servers with a " + fault + " fault and "+ role + " role: " + count;
     }
 }
