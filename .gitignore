@@ -5,3 +5,5 @@
 /Exam Papers/2021/nbproject/private/
 /Exam Papers/2021/build/
 /Exam Papers/2021/dist/
+*.xml
+*.properties
