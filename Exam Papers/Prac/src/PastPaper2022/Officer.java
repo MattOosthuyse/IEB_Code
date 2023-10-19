@@ -49,15 +49,15 @@ public class Officer extends crewMember {
         Commander 4
         Captain 5
          */
-        if (numPromotedOfficers == 1) {
+        if (rank == 1) {
             return "Ensign";
-        } else if (numPromotedOfficers == 2) {
+        } else if (rank == 2) {
             return "Lieutenant";
-        } else if (numPromotedOfficers == 3) {
+        } else if (rank == 3) {
             return "Lt Commander";
-        } else if (numPromotedOfficers == 4) {
+        } else if (rank == 4) {
             return "Commander";
-        } else if (numPromotedOfficers == 5) {
+        } else if (rank == 5) {
             return "Captain";
         }
         return "Rank level not within scope (rank < 1 or rank > 5)";
@@ -69,7 +69,7 @@ public class Officer extends crewMember {
         Because the class extends "crewMember", you are able to access 
         the public methods without having to reference the parent class
          */
-        return getFullname() + "\tCrewID: " + getCrewID() + "\t[" + getDepartment() + "] " + this.getTitle();
+        return getFullname() + "\t Crew ID: " + getCrewID() + "\t[" + getDepartment() + "] " + this.getTitle();
     }
 
 }

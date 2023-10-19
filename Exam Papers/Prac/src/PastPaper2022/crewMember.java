@@ -46,7 +46,7 @@ public class crewMember {
      */
     @Override
     public String toString() {
-        return "fullname " + fullname + "\t Crew ID: " + crewID + "\t [" + department + "]";
+        return fullname + "\t Crew ID: " + crewID + "\t [" + department + "]";
     }
 
 }
