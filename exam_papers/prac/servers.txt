@@ -1,0 +1,10 @@
+B674#C10#Security#Email
+DF8F#A12#Updates#File
+6B1A#I2#Security#Print
+5F67#B15#Updates#Custom
+CD71#A13#Power#Email
+8AE6#G12#Power#Custom
+E1B0#C8#Hardware#Email
+C23F#E3#Temp#Custom
+47EC#C5#Power#Email
+DC97#I11#Power#Custom
